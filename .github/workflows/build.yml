@@ -6,7 +6,9 @@ on:
 
 jobs:
   build-android:
-    runs-on: ubuntu-latest
+    # Вот тут мы жестко указываем старую Ubuntu, где Buildozer работает идеально
+    runs-on: ubuntu-22.04
+    
     steps:
     - uses: actions/checkout@v4
     
@@ -24,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y git zip unzip python3-pip autoconf libtool pkg-config zlib1g-dev libncursesw5-dev cmake libffi-dev libssl-dev
+        sudo apt install -y git zip unzip python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
         pip3 install --user buildozer cython virtualenv
         
     - name: Build APK
