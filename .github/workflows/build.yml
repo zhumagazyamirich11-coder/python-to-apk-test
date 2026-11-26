@@ -6,7 +6,6 @@ on:
 
 jobs:
   build-android:
-    # Вот тут мы жестко указываем старую Ubuntu, где Buildozer работает идеально
     runs-on: ubuntu-22.04
     
     steps:
